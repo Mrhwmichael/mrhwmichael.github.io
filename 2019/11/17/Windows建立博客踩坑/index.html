@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Windows建立博客踩坑 | Hexo</title>
+  <title>Windows系统建立博客踩坑 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="忙活了一个周末，终于完成了个人技术Blog的搭建，windows系统真的是苦不堪言，配置环境坑的一批，作为第一篇文章先简单的把这个周末使用hexo搭建个人博客的坑说一下。 首先要万分感谢程序羊的视频，虽然我网上参考了很多采坑记录，但是主线剧情还是看的 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av44544186&#x2F;?spm_id_from=333.788.videocard.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows建立博客踩坑">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;Windows%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91&#x2F;index.html">
+<meta property="og:title" content="Windows系统建立博客踩坑">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;Windows%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91&#x2F;">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="忙活了一个周末，终于完成了个人技术Blog的搭建，windows系统真的是苦不堪言，配置环境坑的一批，作为第一篇文章先简单的把这个周末使用hexo搭建个人博客的坑说一下。 首先要万分感谢程序羊的视频，虽然我网上参考了很多采坑记录，但是主线剧情还是看的 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av44544186&#x2F;?spm_id_from=333.788.videocard.0">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-17T10:28:53.008Z">
+<meta property="og:updated_time" content="2019-11-17T12:14:56.204Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -159,7 +159,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Windows建立博客踩坑
+      Windows系统建立博客踩坑
     </h1>
   
 
@@ -174,6 +174,26 @@
       
         <p>忙活了一个周末，终于完成了个人技术Blog的搭建，windows系统真的是苦不堪言，配置环境坑的一批，作为第一篇文章先简单的把这个周末使用hexo搭建个人博客的坑说一下。</p>
 <p>首先要万分感谢程序羊的视频，虽然我网上参考了很多采坑记录，但是主线剧情还是看的 <a href="https://www.bilibili.com/video/av44544186/?spm_id_from=333.788.videocard.0" target="_blank" rel="noopener">https://www.bilibili.com/video/av44544186/?spm_id_from=333.788.videocard.0</a> 这一视频，如果是mac跟着这个视频做应该会如丝般顺滑。</p>
+<h2 id="支持要求"><a href="#支持要求" class="headerlink" title="支持要求"></a>支持要求</h2><p>使用hexo建立个人博客并部署到GitHub，需要git，node及hexo的支持。各位可以搜索配置git，将SSH private key同步到GitHub，这也将在之后我们远程部署博客使用上。</p>
+<h2 id="开始踩坑"><a href="#开始踩坑" class="headerlink" title="开始踩坑"></a>开始踩坑</h2><p>之后就是正文部分了，这里按照程序羊的视频的顺序来写一下我踩的坑</p>
+<h3 id="一：-cnpm安装成功无法使用"><a href="#一：-cnpm安装成功无法使用" class="headerlink" title="一： cnpm安装成功无法使用"></a>一： cnpm安装成功无法使用</h3><p>首先就是淘宝的镜像cnpm安装失效，具体现象是cnpm提示安装成功，之后输入cnpm提示 “不是内部或外部命令，也不是可运行的程序或批处理文件”，问题出自windows的环境配置上。</p>
+<p>这里在linux上是不需要配置的，而在windows中需要在我的电脑-高级系统设置-环境变量-用户变量中配置npm的路径，在这个路径下也能找到cnpm。我上网查发现每个人的cnpm位置不完全相同，在运行cnpm安装时候会生成一个路径，使用该路径即可，我的路径是 C:\Users\xxx\AppData\Roaming\npm</p>
+<h3 id="二：hexo-init卡死"><a href="#二：hexo-init卡死" class="headerlink" title="二：hexo init卡死"></a>二：hexo init卡死</h3><p>这个问题现象是运行hexo init指令后，卡死在cloning某一个组件，这里目前没有找到很好的解决方法，由于我退出的时候会出现hexo exit相关的提示，说明并不是卡死，而只是速度慢，通过漫长的等待最终我clone成功了，这里小伙伴们如果实在等的漫长看别人好像更换过镜像，可以在别的地方将hexo克隆下来</p>
+<h3 id="三：hexo-d之后打不开个人博客"><a href="#三：hexo-d之后打不开个人博客" class="headerlink" title="三：hexo d之后打不开个人博客"></a>三：hexo d之后打不开个人博客</h3><p>在hexo d之后直接通过仓库地址打不开博客，这里我是通过GitHub的Environment中 View Deployment找到自己的博客地址的，如果实在无法打开可以尝试这个位置</p>
+<h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><p>后面附带一下hexo的常用命令，供大家编辑博客之后参考。</p>
+<h5 id="1-清除hexo缓存"><a href="#1-清除hexo缓存" class="headerlink" title="1 清除hexo缓存"></a>1 清除hexo缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-生成hexo相对应文件"><a href="#2-生成hexo相对应文件" class="headerlink" title="2 生成hexo相对应文件"></a>2 生成hexo相对应文件</h5><p>使用hexo generate，指令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-将我们的博客部署到远端"><a href="#3-将我们的博客部署到远端" class="headerlink" title="3 将我们的博客部署到远端"></a>3 将我们的博客部署到远端</h5><p>使用hexo deploy，指令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-在本地预览一下博客的内容"><a href="#4-在本地预览一下博客的内容" class="headerlink" title="4 在本地预览一下博客的内容"></a>4 在本地预览一下博客的内容</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>这样使用生成的地址： <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就能预览我们的博客了</p>
+<h5 id="5-生成新的Post博客"><a href="#5-生成新的Post博客" class="headerlink" title="5 生成新的Post博客"></a>5 生成新的Post博客</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
+
+
 
       
 
@@ -265,16 +285,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2019/11/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
